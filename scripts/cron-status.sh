@@ -1,7 +1,7 @@
 #!/bin/sh
 if cru l | grep "WANAutoCheck"
 then
-	logger "[CRON] Up"
+	logger "[CRONStatus] WANAutoCheck Up"
 else
-	logger "[CRON] Down"
+	logger "[CRONStatus] WAN job down"
 fi
