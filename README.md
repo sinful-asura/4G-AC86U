@@ -28,6 +28,13 @@ Now it's time to use `scp` to copy the contents of the folder of local machine c
 ### [Step 2]
 A prerequisite *for now* is to run `/jffs/scripts/init-cron.sh` whenever there's a router reboot
 
-# **[WiP] Full automation after the initial setup by using USB storage device**
+# Full automation after the initial setup by using USB storage device**
 
-> TODO
+Plug in a USB drive to the back of the router, you can also set it up as a FTP / Media Server to make the full use of it.
+- SSH into the router
+- Execute the following commands:
+```
+nvram set script_usbmount="/jffs/scripts/init-cron.sh"
+nvram commit
+```
+After the next reboot, you should be able to find an entry in **System Log** that says `[Init Cron] WAN AutoCheck & CRONStatus scripts started`
